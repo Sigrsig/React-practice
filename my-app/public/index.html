@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1" />
+    <title>React App</title>
+	  
+	  
+  </head>
+  <body>
+	
+    
+
+	  <p id="hellow"></p>
+	  <p id="more-text"></p>
+	  <p id="cat-num"></p>
+	
+	  
+	 <script>
+		class Food {
+			
+	  		constructor(name) {
+				this.brand = name;
+	  		}
+		 
+		 	
+		 	present() {
+				return (' I have some ' + this.brand + ' ketchup');
+			}
+		}
+
+	 /*Remember that if you want to use this version it's not a new Car anymore, it's a new Model */
+		 class Model extends Food {
+			 constructor(name, exp) {
+				 /*Super refers to the stuff coming from the parent class*/
+				 super(name);
+				 this.expiry = exp;
+			 }
+			 show() {
+				 return this.present() + ', it expires on ' + this.expiry
+			 }
+		 }
+		 
+		myfood = new Model("Heinz", "21/10/21");
+		document.write(myfood.show());
+		 
+		 
+		 /*Let's learn arrow functions, basically just replace function() with one of these*/
+		 hello = () => "Hello World!";
+		 document.getElementById("hellow").innerHTML = hello();
+		 
+		 
+		 more = () => {
+			 return "Here is some more text";
+		 }
+		
+		 document.getElementById("more-text").innerHTML = more();
+		 
+		 /*Passing values through functions*/
+		 cats = (val) => "I have " + val + " cats";
+		 document.getElementById("cat-num").innerHTML = cats(6);
+	 </script>
+	  
+	  
+	  <h3>Alright, let's get into some more stuff</h3>
+	  <button id="funct-butt">Click for regular functions</button>
+	  <p>this represents:</p>
+	  <p id="regular-funct"></p>
+	  
+	  <button id="arrow-butt">Click here for arrow functions</button>
+	  <p>this represents:</p>
+	  <p id="arrow-funct"></p>
+	  
+	  <script>
+		  /*this in normal functions:*/
+		  class Header {
+			  constructor() {
+				  this.color = "Red";
+			  }
+		  
+		  
+			  changeColor = function() {
+				  document.getElementById("regular-funct").innerHTML += this;
+			  }
+		  }
+		  
+		  myheader = new Header();
+		  
+		  /*window object calls the function*/
+		  window.addEventListener("load", myheader.changeColor);
+		  
+		  /*button object calls the function*/
+		  document.getElementById("funct-butt").addEventListener("click", myheader.changeColor);
+		  
+		  
+	  	/*And here are arrow functions*/
+	  	class MoreHeader {
+			constructor() {
+				this.color = "Red";
+			}
+			
+			changeColor = () => {
+				document.getElementById("arrow-funct").innerHTML += this;
+			}
+		}
+		
+		myotherheader = new MoreHeader();
+		  
+		  /*Window object calls the function*/
+		  window.addEventListener("load", myotherheader.changeColor);
+		  
+		  /*Button object calls the function*/
+		  document.getElementById("arrow-butt").addEventListener("click", myotherheader.changeColor);
+		  
+		  // Note: I'd like to learn more about this and how it's best used
+	  </script>
+	
+	<h3>Time for some Variables!!</h3>  
+	  <script>
+	  	/*Types of variables
+			var: pretty much what you'd expect in terms of where it's used
+			let: has a block scope. Limited to the block (or expression) where it is defined
+			const: A variable where once created it can never be changed. Also has a block scope
+		*/
+	  
+	  </script>
+	  
+	  <div id="root"></div>
+	  
+	  <div id="root-two"></div>
+	  
+	  <div id="class-js"></div>
+	  <div id="funct-js"></div>
+	  
+	  <div id="cat-color"></div>
+	  
+	  <div id="prop-one"></div>
+	  <div id="comp-in"></div>
+	  
+	  <div id="prop-two"></div>
+	  
+	  <div id="cat-info"></div>
+	  <div id="color-change"></div>
+	  
+	  <div id="fav-col"></div>
+	  
+	  <div id="form"></div>
+	  <div id="form-two"></div>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+  </body>
+</html>
